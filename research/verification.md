@@ -28,3 +28,9 @@ The in-app browser's download-event wait timed out when testing the native Blob 
 Two independent content passes reviewed the full curriculum. The lab reviewer inspected all 59 nodes and app integration. All reported correctness findings were corrected; detailed scope and provenance are in foundations.md, practice.md and labs-review.md. Direct ACM page retrieval returned HTTP 403; the practice-source limitation is recorded in practice.md. This review does not establish learning efficacy, changed behavior or a moral assessment of learners.
 
 No O-1 records, meeting content, personal communications or upstream private material were used. The deployed build contains only the authored educational application. Owner-private access is preserved by the private Sites publishing operation; the successful deployment response is the publication record.
+
+## GitHub links update — November 10, 2026
+
+Added the project's GitHub link to onboarding, header and footer, and explicit repository links to all seven sibling entries. The family registry now contains all eight projects and matches the sibling apps and their companion pages. The source repository is public; the Sites preview remains owner-private.
+
+All eight app builds and their existing test suites passed (340 tests total). Everyday Ethics validation remains at 0 errors and the same 26 documented warnings. Browser checks verified the rendered repository destinations in Skepsis, Carpe and Guanxi companion pages and the Everyday Ethics onboarding. No learning or progress logic changed.

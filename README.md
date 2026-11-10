@@ -52,7 +52,7 @@ Open http://127.0.0.1:4391. The build produces a standalone static site in `dist
 
 No analytics, account system, AI service or advertising is loaded. Progress, optional name and reflections stay in this browser's local storage. Export/import from **Me** provides a backup and device transfer. Clearing browser data removes local progress. This is not automatic cross-device synchronization.
 
-The Sites deployment begins owner-private. Its identity is in `.openai/hosting.json`. Publication and access are separate; do not change sharing to deploy. The MIT-licensed source inherits the family's license; no public GitHub repository is claimed.
+The Sites deployment begins owner-private. Its identity is in `.openai/hosting.json`. Publication and access are separate; do not change sharing to deploy. The MIT-licensed source is available at [ionpetro/everyday-ethics](https://github.com/ionpetro/everyday-ethics). Each app in the family links to the other projects and their GitHub repositories.
 
 ## Files
 

@@ -21,19 +21,20 @@
   // ---------- sister apps ----------
   /** The family of free, open-source learning apps. Keep this list the same in Skepsis, Carpe, Gnothi, Objection, Everyday Ethics and Oikos (app.js and site.mjs). */
   const FAMILY = [
-    { id: "skepsis", name: "Skepsis", url: "https://skepsis-greek.vercel.app", repo: "https://github.com/ionpetro/skepsis", en: "the Greek hiding in everyday English", el: "οι ελληνικές ρίζες που κρύβονται στα αγγλικά" },
-    { id: "carpe", name: "Carpe", url: "https://carpe-latin.vercel.app", repo: "https://github.com/ionpetro/carpe", en: "Latin for Greece's national exams", el: "Λατινικά για τις Πανελλαδικές" },
-    { id: "gnothi", name: "Gnothi", url: "https://gnothi-greek.vercel.app", repo: "https://github.com/ionpetro/gnothi", en: "Ancient Greek for Greece's national exams", el: "Αρχαία Ελληνικά για τις Πανελλαδικές" },
-    { id: "objection", name: "Objection", url: "https://objection-bar.vercel.app", repo: "https://github.com/ionpetro/objection", en: "prep for the US bar exam", el: "προετοιμασία για τις εξετάσεις δικηγόρων των ΗΠΑ" },
-    { id: "agora", name: "Agora", url: "https://agora-sales-xi.vercel.app", repo: "https://github.com/ionpetro/agora", en: "sales and negotiation, with ethics", el: "πωλήσεις και διαπραγμάτευση, με ηθική" },
-    { id: "oikos", name: "Oikos", url: "https://oikos-azure-five.vercel.app", repo: "https://github.com/ionpetro/oikos", en: "economics and incentives", el: "οικονομικά και κίνητρα" },
-    { id: "guanxi", name: "Guanxi", url: "https://guanxi-mandarin.vercel.app", repo: "https://github.com/ionpetro/guanxi", en: "Mandarin and local culture", el: "Mandarin and local culture" },
+    {"id": "skepsis", "name": "Skepsis", "url": "https://skepsis-greek.vercel.app", "repo": "https://github.com/ionpetro/skepsis", "en": "the Greek hiding in everyday English", "el": "οι ελληνικές ρίζες που κρύβονται στα αγγλικά"},
+    {"id": "carpe", "name": "Carpe", "url": "https://carpe-latin.vercel.app", "repo": "https://github.com/ionpetro/carpe", "en": "Latin for Greece's national exams", "el": "Λατινικά για τις Πανελλαδικές"},
+    {"id": "gnothi", "name": "Gnothi", "url": "https://gnothi-greek.vercel.app", "repo": "https://github.com/ionpetro/gnothi", "en": "Ancient Greek for Greece's national exams", "el": "Αρχαία Ελληνικά για τις Πανελλαδικές"},
+    {"id": "objection", "name": "Objection", "url": "https://objection-bar.vercel.app", "repo": "https://github.com/ionpetro/objection", "en": "prep for the US bar exam", "el": "προετοιμασία για τις εξετάσεις δικηγόρων των ΗΠΑ"},
+    {"id": "agora", "name": "Agora", "url": "https://agora-sales-xi.vercel.app", "repo": "https://github.com/ionpetro/agora", "en": "sales and negotiation, with ethics", "el": "πωλήσεις και διαπραγμάτευση, με ηθική"},
+    {"id": "oikos", "name": "Oikos", "url": "https://oikos-azure-five.vercel.app", "repo": "https://github.com/ionpetro/oikos", "en": "economics and incentives", "el": "οικονομικά και κίνητρα"},
+    {"id": "guanxi", "name": "Guanxi", "url": "https://guanxi-mandarin.vercel.app", "repo": "https://github.com/ionpetro/guanxi", "en": "Mandarin and local culture", "el": "Μανδαρινικά και τοπική κουλτούρα"},
+    {"id": "everyday-ethics", "name": "Everyday Ethics", "url": "https://everyday-ethics-ion.wintrypenny4.chatgpt.site", "repo": "https://github.com/ionpetro/everyday-ethics", "en": "everyday choices and ethical judgment · private preview", "el": "καθημερινές επιλογές και ηθική κρίση · ιδιωτική προεπισκόπηση"},
   ];
 
   /** Links to the other apps in the family, tagged so each app's analytics shows where visitors came from. */
-  const sisterLinks = () => FAMILY.filter((a) => a.id !== "everyday-ethics").map((a) => `<a href="${a.url}/?utm_source=everyday-ethics&utm_medium=sister_link" target="_blank" rel="noopener" data-sister="${a.id}">${a.name}</a> (${a.en})`).join(" · ");
+  const sisterLinks = () => FAMILY.filter((a) => a.id !== "everyday-ethics").map((a) => `<a href="${a.url}/?utm_source=everyday-ethics&utm_medium=sister_link" target="_blank" rel="noopener" data-sister="${a.id}">${a.name}</a> (${a.en}; <a href="${a.repo}" target="_blank" rel="noopener noreferrer" aria-label="${a.name} on GitHub">GitHub</a>)`).join(" · ");
   const sisterNote = () => `<p class="sister">More free, open-source apps like this: ${sisterLinks()}</p>`;
-  const REPO = ""; // No public repository has been published for this private Site.
+  const REPO = "https://github.com/ionpetro/everyday-ethics";
   const ghLink = (cls, where, inner, label) => (REPO ? `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="${label || "The Everyday Ethics code on GitHub"}" title="${label || "The Everyday Ethics code on GitHub"}">${inner}</a>` : "");
   const FREE_NOTE = "No account, no ads, no tracking. Your practice and reflections stay in this browser. Export a backup from Me to keep them or move devices.";
 
