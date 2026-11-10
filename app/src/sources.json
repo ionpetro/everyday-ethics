@@ -1,0 +1,23 @@
+[
+  {
+    "id": "E1",
+    "title": "A Framework for Ethical Decision Making",
+    "url": "https://www.scu.edu/ethics/ethics-resources/a-framework-for-ethical-decision-making/",
+    "publisher": "Markkula Center for Applied Ethics \u00b7 Santa Clara University",
+    "note": "A practical normative framework using rights, justice, consequences, common good, virtue and care. These lenses can disagree. It does not supply a universal answer key or prove that completing a course improves behavior."
+  },
+  {
+    "id": "E2",
+    "title": "What an ethical decision framework can\u2014and cannot\u2014do",
+    "url": "https://www.scu.edu/ethics/ethics-resources/ethical-decision-making/introduction-to-a-framework-for-ethical-decision-making/",
+    "publisher": "Markkula Center for Applied Ethics \u00b7 Santa Clara University",
+    "note": "The framework supports careful consideration; it is not an algorithm that decides what is right. Our scenarios and teaching routines are original educational adaptations, not quotations or validated assessments."
+  },
+  {
+    "id": "E3",
+    "title": "ACM Code of Ethics and Professional Conduct",
+    "url": "https://www.acm.org/code-of-ethics",
+    "publisher": "Association for Computing Machinery",
+    "note": "A professional computing code supporting honesty, privacy, avoiding harm and accountability. Applying these principles to everyday examples is an authored adaptation, not a statement of law or a guarantee that interests never conflict."
+  }
+]

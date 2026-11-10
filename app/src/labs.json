@@ -1,0 +1,973 @@
+[
+  {
+    "id": "friend-idea",
+    "title": "Your friend’s big idea",
+    "tag": "Honesty · Care",
+    "role": "You are Sam’s friend",
+    "description": "Support a person without pretending to know their idea will work.",
+    "context": "Fictional case. Sam wants to launch a neighborhood meal service. You like the food but think delivery costs may be missing from the budget. You are a friend, not a business or financial adviser. You have seen only a one-page plan.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Sam · your friend",
+        "text": "Everyone says I should go for it. Be honest: do you think this could work?",
+        "choices": [
+          {
+            "text": "I like the food. Could we look at delivery costs before I give an opinion on the plan?",
+            "next": "ask",
+            "feedback": "You separate encouragement from a conclusion you cannot yet support."
+          },
+          {
+            "text": "You will make it work. I am sure of it.",
+            "next": "reassure",
+            "feedback": "You offer comfort, but certainty goes beyond what you know."
+          },
+          {
+            "text": "I am worried about the missing delivery costs. I could be overlooking something.",
+            "next": "facts",
+            "feedback": "You identify a specific uncertainty without turning it into a verdict on Sam."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "ask": {
+        "speaker": "Sam",
+        "text": "I thought friends would help deliver for free. I have not asked them yet.",
+        "choices": [
+          {
+            "text": "Then the current budget depends on help nobody has agreed to provide. Can we check that assumption?",
+            "next": "facts",
+            "feedback": "A resource is uncertain when the people providing it have not agreed."
+          },
+          {
+            "text": "I cannot judge the whole business, but I can tell you which costs I cannot verify.",
+            "next": "boundary",
+            "feedback": "You can be useful while setting a limit on the role you can responsibly take."
+          }
+        ],
+        "context": "New information: the budget assumes unpaid help that has not been agreed.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "reassure": {
+        "speaker": "Sam",
+        "text": "That means a lot. I will tell my partner you checked the plan and think the numbers work.",
+        "choices": [
+          {
+            "text": "Please do not say I checked the numbers. I encouraged you, but I have a specific concern we should discuss.",
+            "next": "facts",
+            "feedback": "The correction restores the distinction between friendship and a reviewed plan."
+          },
+          {
+            "text": "Okay. I do not want to take back the encouragement now.",
+            "next": "uncorrected",
+            "feedback": "Sam is about to rely on a stronger statement than you can support."
+          }
+        ],
+        "context": "New information: your reassurance is being treated as a financial review.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "facts": {
+        "speaker": "Sam",
+        "text": "I have not checked delivery costs. The kitchen wants a deposit tomorrow, and my partner thinks that part is settled.",
+        "choices": [
+          {
+            "text": "Could you tell your partner what is still unknown before either of you commits?",
+            "next": "tension",
+            "feedback": "A partner sharing the risk needs the uncertainty while the decision is still open."
+          },
+          {
+            "text": "Could you ask about a smaller trial or extra time, then check costs together?",
+            "next": "trial",
+            "feedback": "You introduce a possible alternative; the kitchen may decline and a trial may still cost money."
+          }
+        ],
+        "context": "New information: there is a near-term deposit and another person may rely on an incomplete picture.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "tension": {
+        "speaker": "Sam",
+        "text": "I am embarrassed. Can you tell my partner for me?",
+        "choices": [
+          {
+            "text": "I can sit with you while you explain it, if your partner is comfortable with that. You know the plan best.",
+            "next": "candid",
+            "feedback": "You offer support without silently taking ownership of another person’s commitments."
+          },
+          {
+            "text": "I can help you prepare what to say, but I cannot speak on your behalf.",
+            "next": "boundary",
+            "feedback": "A limit on your involvement can coexist with care and honest feedback."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "trial": {
+        "speaker": "Sam",
+        "text": "The kitchen will hold the slot for one more day, but a smaller booking costs more per meal.",
+        "choices": [
+          {
+            "text": "That gives you another option, not proof of success. Let’s compare it with your partner before deciding.",
+            "next": "candid",
+            "feedback": "You recognize both the extra choice and its cost, without making the decision for Sam."
+          },
+          {
+            "text": "I can help list the unanswered questions. You and your partner should decide what risk you can accept.",
+            "next": "boundary",
+            "feedback": "You support deliberation without presenting yourself as an expert or guarantor."
+          }
+        ],
+        "context": "New information: there is an extension, but the alternative has a real tradeoff.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "candid": {
+        "ending": "Honesty with company",
+        "text": "Sam has a clearer picture to share and an offer of practical support. Sam may still feel disappointed or choose to proceed. No result is guaranteed.",
+        "lesson": "Caring about someone does not require you to endorse an unverified claim.",
+        "reflection": "What exact statement could preserve your care while making the uncertainty clear? What belongs to Sam to decide?"
+      },
+      "boundary": {
+        "ending": "A useful limit",
+        "text": "You name what you know, what you cannot verify, and the support you can offer. Sam retains the decision and may wish you had taken a bigger role.",
+        "lesson": "A boundary is more helpful when it comes with clear information rather than vague reassurance.",
+        "reflection": "Where does helping a friend end and taking responsibility for their decision begin?"
+      },
+      "uncorrected": {
+        "ending": "Encouragement became evidence",
+        "text": "Sam is left believing you checked the plan. Before anyone relies further on that impression, you can correct what you did and did not assess.",
+        "lesson": "A comforting intention does not remove the need to correct a misleading impression.",
+        "reflection": "Write one sentence that takes back the unsupported certainty without withdrawing your friendship."
+      }
+    }
+  },
+  {
+    "id": "shared-photo",
+    "title": "The photo everyone loves",
+    "tag": "Consent · Digital life",
+    "role": "You took a photo at a gathering",
+    "description": "A cheerful post reaches an audience nobody discussed.",
+    "context": "Fictional case. You took a group photo at a friend’s birthday. People agreed to a picture for the private group chat. You now want to put it on a public page celebrating the neighborhood. No urgent public-interest reason requires publication.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Lee · another guest",
+        "text": "That picture is perfect for the public page. Tag everyone!",
+        "choices": [
+          {
+            "text": "They agreed to the group chat. I will ask about a public post before using it there.",
+            "next": "ask",
+            "feedback": "Permission for one audience does not settle a different audience."
+          },
+          {
+            "text": "They posed, so I will post it and remove it if someone complains.",
+            "next": "posted",
+            "feedback": "This makes publication the default before the people pictured have chosen."
+          },
+          {
+            "text": "I can use a picture of the decorations instead.",
+            "next": "alternative",
+            "feedback": "The celebration can be represented without publishing this group photo."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "ask": {
+        "speaker": "Noor · a guest",
+        "text": "Please do not put me on the public page. I do not want to explain why.",
+        "choices": [
+          {
+            "text": "Understood. I can leave the group photo private and choose another picture.",
+            "next": "alternative",
+            "feedback": "You can respect the preference without demanding private reasons."
+          },
+          {
+            "text": "Would you be comfortable with a version that does not identify you? It is fine to say no.",
+            "next": "crop",
+            "feedback": "You ask about a specific alternative without treating a refusal as a bargaining obstacle."
+          }
+        ],
+        "context": "New information: one person declines public use and does not want to disclose the reason.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "posted": {
+        "speaker": "Noor · private message",
+        "text": "Please remove that public photo. I only agreed to the group chat. A neighbor has already shared it.",
+        "choices": [
+          {
+            "text": "I will remove my post now and ask the neighbor to remove their copy, without sharing your reason.",
+            "next": "repair",
+            "feedback": "You can reduce further spread, although you cannot promise to erase every copy."
+          },
+          {
+            "text": "I will keep it up because it already has likes. Nobody will notice you.",
+            "next": "ignored",
+            "feedback": "Popularity does not answer Noor’s objection, and you cannot know who will notice."
+          }
+        ],
+        "context": "New information: Noor objects and a copy exists beyond your own page.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "crop": {
+        "speaker": "Noor",
+        "text": "I am also recognizable from my jacket and the location. I would prefer you use something else.",
+        "choices": [
+          {
+            "text": "Thanks for explaining the limit. I will use the decorations picture.",
+            "next": "alternative",
+            "feedback": "Removing a face is not always enough to remove identification."
+          },
+          {
+            "text": "Then I will skip a post about this gathering.",
+            "next": "no-post",
+            "feedback": "Choosing not to publish is an available option; a public post is not an obligation."
+          }
+        ],
+        "context": "New information: the proposed crop would still identify the person.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "alternative": {
+        "speaker": "Lee",
+        "text": "A decorations photo is less personal. Could we ask people to submit a picture specifically for the public page?",
+        "choices": [
+          {
+            "text": "Yes. We can explain the audience and let anyone decline without comment.",
+            "next": "new-photo",
+            "feedback": "A new invitation can make the intended use clear before people participate."
+          },
+          {
+            "text": "We could, but I would rather share the decorations today and leave people out of it.",
+            "next": "no-post",
+            "feedback": "You choose a lower-exposure way to mark the event; the story may be less vivid."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "repair": {
+        "speaker": "Noor",
+        "text": "Thank you. Can you guarantee nobody kept a screenshot?",
+        "choices": [
+          {
+            "text": "No. My post is down and I can request removal of known copies, but I cannot verify every device.",
+            "next": "repaired",
+            "feedback": "An honest account of your limits avoids another promise you cannot fulfill."
+          },
+          {
+            "text": "I cannot guarantee that. I can also correct the audience rule with the group without naming you.",
+            "next": "repaired",
+            "feedback": "A process correction can reduce repetition without exposing the person who objected."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "new-photo": {
+        "ending": "A fresh invitation",
+        "text": "You invite volunteers to contribute to a clearly described public post. Some decline. Only agreed contributions are used; the original private photo stays private.",
+        "lesson": "Meaningful permission includes the intended use and room to decline.",
+        "reflection": "What information would you include before asking someone to participate?"
+      },
+      "no-post": {
+        "ending": "A smaller public footprint",
+        "text": "You use the decorations picture or skip a people-focused post. The public story is less personal, and nobody needs to justify staying out of it.",
+        "lesson": "You can preserve a shared memory without publishing every person in it.",
+        "reflection": "Which purpose did the post serve, and what less exposing option could serve that purpose?"
+      },
+      "repaired": {
+        "ending": "Repair without impossible promises",
+        "text": "You remove what you control, request removal of known copies and explain the remaining uncertainty. Noor decides what further support to request.",
+        "lesson": "Repair starts with concrete action and an accurate account of what remains outside your control.",
+        "reflection": "What can you change now, and what must you avoid promising?"
+      },
+      "ignored": {
+        "ending": "A refusal left unheard",
+        "text": "The public photo remains despite Noor’s objection. You can still remove it and address the mismatch between the original permission and your new use.",
+        "lesson": "Likes measure engagement; they do not establish permission.",
+        "reflection": "What would you do now to restore choice without making Noor disclose a private reason?"
+      }
+    }
+  },
+  {
+    "id": "community-places",
+    "title": "Four places, six people",
+    "tag": "Fairness · Community",
+    "role": "You help organize a free evening workshop",
+    "description": "Choose a process when several applicants have a reasonable claim.",
+    "context": "Fictional case. A workshop has four accessible places and six eligible applicants. The announcement promised a published selection process before decisions, but did not choose one. No places have been awarded. The team must consult briefly, choose and explain a defensible rule. There is no universally best allocation rule for every workshop.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Mina · organizer",
+        "text": "Let’s just choose the four people we know. We can get this finished.",
+        "choices": [
+          {
+            "text": "Knowing them is convenient, but was that part of what the workshop is for? Let’s state the purpose and options.",
+            "next": "purpose",
+            "feedback": "You ask what could justify a rule before selecting people who benefit you."
+          },
+          {
+            "text": "We should use a lottery. Equal chances would avoid picking favorites.",
+            "next": "lottery",
+            "feedback": "Equal chances are a defensible consideration, but the purpose and access conditions still matter."
+          },
+          {
+            "text": "I think need should matter. Could we consult applicants about a modest way to assess it?",
+            "next": "need",
+            "feedback": "Need can be relevant, but asking for unnecessary private information creates another burden."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "purpose": {
+        "speaker": "Mina",
+        "text": "The workshop is meant to introduce local residents to repair skills. Two applicants cannot attend the next session; the other four can.",
+        "choices": [
+          {
+            "text": "That gives us a reason to discuss priority for the two, with a lottery for the remaining places.",
+            "next": "access",
+            "feedback": "You make the reason for a mixed rule explicit instead of treating it as inevitable."
+          },
+          {
+            "text": "We could still give all six an equal chance and explain why we give that criterion priority.",
+            "next": "access",
+            "feedback": "A different defensible value may lead to a different rule; explain what it leaves unmet."
+          }
+        ],
+        "context": "New information: availability for the next session differs across applicants.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "lottery": {
+        "speaker": "Mina",
+        "text": "Two people can only attend this session. They ask whether a lottery ignores their situation.",
+        "choices": [
+          {
+            "text": "It does leave that need unmet. Let’s discuss whether limited priority better fits the workshop purpose.",
+            "next": "access",
+            "feedback": "You acknowledge the tradeoff and reopen the rule before it is applied."
+          },
+          {
+            "text": "We can explain why equal chances matter here and offer a way to challenge incorrect eligibility facts.",
+            "next": "access",
+            "feedback": "You distinguish disagreement with a criterion from errors in applying it; neither disappears because you used a lottery."
+          }
+        ],
+        "context": "New information: equal chances and differing access needs pull in different directions.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "need": {
+        "speaker": "Mina",
+        "text": "Someone suggests asking all applicants for bank statements. We only need to know who cannot use the later session.",
+        "choices": [
+          {
+            "text": "Ask only the relevant availability question, and accept a simple response under the published process.",
+            "next": "access",
+            "feedback": "The proposed evidence demand is broader than the stated criterion requires."
+          },
+          {
+            "text": "If we cannot assess relevant need proportionately, let’s discuss a lottery instead.",
+            "next": "access",
+            "feedback": "You reconsider the criterion rather than demand sensitive proof by default."
+          }
+        ],
+        "context": "New information: the proposed proof would collect much more private information than this decision needs.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "access": {
+        "speaker": "Jo · applicant",
+        "text": "I answered “available next time,” but I misunderstood the date. I cannot attend it. Have you already made the draw?",
+        "choices": [
+          {
+            "text": "No places are assigned yet. We can check that correction under the same deadline and tell everyone how it affects the rule.",
+            "next": "decision",
+            "feedback": "A relevant correction before selection should be considered consistently."
+          },
+          {
+            "text": "It is easier to keep the original answers, even though the selection has not happened.",
+            "next": "rigid",
+            "feedback": "Convenience alone leaves a known relevant error in the decision."
+          }
+        ],
+        "context": "New information: a relevant eligibility fact may be wrong; selection is still open.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "decision": {
+        "speaker": "Mina",
+        "text": "The correction is confirmed. Three people cannot attend later. The group still disagrees about whether that should give priority.",
+        "choices": [
+          {
+            "text": "State a need-first rule: prioritize the three, then draw one of the other three. Explain the cost to equal chances.",
+            "next": "priority-end",
+            "feedback": "This follows one explicit objective; it does not prove the objective is the only fair one."
+          },
+          {
+            "text": "State an equal-chance rule: draw four of six, explain why, and help those who miss out explore another session.",
+            "next": "lottery-end",
+            "feedback": "This follows another explicit objective; support for those left out does not erase their disappointment."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "priority-end": {
+        "ending": "A reasoned priority rule",
+        "text": "The team explains the rule before applying it, corrects the facts and makes the process visible. Three applicants have priority; the others compete for one place. Some reasonably prefer equal chances.",
+        "lesson": "A defensible allocation names both its justification and the people whose interests it leaves unmet.",
+        "reflection": "Which objective does this rule serve? What change in the workshop’s purpose would make you choose differently?"
+      },
+      "lottery-end": {
+        "ending": "Equal chances, unequal effects",
+        "text": "The team explains and applies a four-of-six draw after correcting the facts. Two people miss out; one may have no other session available. The process remains open to challenges about mistakes.",
+        "lesson": "An impartial procedure can still have unequal effects that deserve attention.",
+        "reflection": "What does a lottery settle, and what concerns remain after the draw?"
+      },
+      "rigid": {
+        "ending": "A process with a known error",
+        "text": "The team is about to select using an answer it has reason to doubt. Before selecting, it can correct the fact consistently and explain whether the chosen rule changes.",
+        "lesson": "A clear rule does not excuse avoidable mistakes in the facts it uses.",
+        "reflection": "How would you offer a correction route that is usable by every applicant, not only someone who knows an organizer?"
+      }
+    }
+  },
+  {
+    "id": "teammate-demo",
+    "title": "The too-perfect demo",
+    "tag": "Honesty · Speaking up",
+    "role": "You are a teammate in a customer demo",
+    "description": "Correct an important claim while considering timing, evidence and power.",
+    "context": "Fictional case. A teammate is demonstrating a scheduling tool. You observed one repeatable failure last week. You do not yet know whether the current build fixes it. The customer plans to decide today. Nobody is in immediate physical danger. Your organization has a private review route if you fear retaliation.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Alex · teammate",
+        "text": "This never loses a booking. You can rely on it for your whole team.",
+        "choices": [
+          {
+            "text": "Could we confirm which build was tested before making that guarantee?",
+            "next": "version",
+            "feedback": "You question the support for the claim without asserting that the current build must still be faulty."
+          },
+          {
+            "text": "I will send Alex a private message immediately asking for a correction before the customer decides.",
+            "next": "private",
+            "feedback": "A private route may preserve dignity, but it needs to work before reliance."
+          },
+          {
+            "text": "I will say nothing today. Raising it might embarrass Alex.",
+            "next": "silence",
+            "feedback": "Avoiding embarrassment leaves the customer with an unqualified claim you have reason to question."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "version": {
+        "speaker": "Alex",
+        "text": "Good point. This build has the same booking code as last week. I have not tested that failure again.",
+        "choices": [
+          {
+            "text": "Then let’s describe the limitation and offer a test before they commit.",
+            "next": "customer",
+            "feedback": "The uncertainty should be visible while the customer can still choose."
+          },
+          {
+            "text": "Could we pause this feature discussion and have the reviewer check it before any decision?",
+            "next": "review",
+            "feedback": "A bounded pause can protect accuracy without pretending the bug is already diagnosed today."
+          }
+        ],
+        "context": "New information: the booking code is unchanged and the reported failure has not been retested.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "private": {
+        "speaker": "Alex · private reply",
+        "text": "I saw your message. Please leave it until after they sign. We need this sale.",
+        "choices": [
+          {
+            "text": "I cannot support the guarantee. I will ask for a brief pause and contact the reviewer before any commitment.",
+            "next": "review",
+            "feedback": "You use an available review route; delaying until after reliance would not serve the same purpose."
+          },
+          {
+            "text": "I will calmly tell the customer the reliability claim needs checking before they decide.",
+            "next": "customer",
+            "feedback": "A direct factual qualification may be needed when a private correction is refused."
+          },
+          {
+            "text": "I will leave it for later to keep the meeting friendly.",
+            "next": "silence",
+            "feedback": "The customer will still be relying on an unqualified claim."
+          }
+        ],
+        "context": "New information: a timely private correction has been refused.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "silence": {
+        "speaker": "Customer",
+        "text": "We are about to pay. Is the no-lost-bookings claim something you have checked?",
+        "choices": [
+          {
+            "text": "I cannot confirm it. I observed a failure last week and have not verified a fix. Please pause that decision while we check.",
+            "next": "customer",
+            "feedback": "You can still correct the basis for reliance, while acknowledging the limits of what you know."
+          },
+          {
+            "text": "Yes, we are confident. The details can come later.",
+            "next": "uncorrected",
+            "feedback": "This adds your own unsupported assurance to the original claim."
+          }
+        ],
+        "context": "New information: the customer explicitly asks for confirmation immediately before payment.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "review": {
+        "speaker": "Reviewer · private channel",
+        "text": "I can join in ten minutes and review the evidence. I cannot promise a fix today. Would you like me to take over the explanation?",
+        "choices": [
+          {
+            "text": "Yes. Tell the customer we need a short verification pause and that the guarantee is not established.",
+            "next": "review-end",
+            "feedback": "Delegating to an accountable reviewer can be appropriate, especially when direct confrontation feels unsafe."
+          },
+          {
+            "text": "Please join. I can state what I observed, and you can help explain what it does and does not establish.",
+            "next": "customer",
+            "feedback": "You share direct observations and make space for verification instead of making a broader accusation."
+          }
+        ],
+        "context": "New information: an accountable reviewer is available, but no immediate fix is promised.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "customer": {
+        "speaker": "Customer",
+        "text": "Thank you for clarifying. We could test with sample bookings, but we may choose another tool if it cannot support our schedule.",
+        "choices": [
+          {
+            "text": "That is fair to consider. We can agree on the test and its limits before you decide.",
+            "next": "test-end",
+            "feedback": "A transparent test preserves choice; it may lead to losing the sale."
+          },
+          {
+            "text": "If that reliability level is essential today, we should pause this purchase until we can establish it.",
+            "next": "pause-end",
+            "feedback": "A pause can be justified by the unmet requirement without predicting what the customer will do."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "review-end": {
+        "ending": "An accountable pause",
+        "text": "The reviewer takes responsibility for checking the claim and explaining the uncertainty before a purchase. The meeting takes longer; Alex may remain upset.",
+        "lesson": "Speaking up can include using a timely, safer review route with a clear owner.",
+        "reflection": "What makes a private escalation adequate here? What would you do if it could not reach the customer before payment?"
+      },
+      "test-end": {
+        "ending": "A test with a real exit",
+        "text": "The customer agrees to consider a limited test and keeps the option to decline. Passing that test would support only the conditions actually tested.",
+        "lesson": "A small test can inform a decision without becoming a universal guarantee.",
+        "reflection": "Which failure would the test look for, and what would a pass still leave unknown?"
+      },
+      "pause-end": {
+        "ending": "A possible sale left open",
+        "text": "You acknowledge the unmet requirement and pause the purchase. The customer may return, wait or choose someone else.",
+        "lesson": "Honest correction can carry a real commercial cost.",
+        "reflection": "How would you explain the pause to your team while keeping the customer’s decision free?"
+      },
+      "uncorrected": {
+        "ending": "Two assurances, no verification",
+        "text": "The customer has received another assurance without a verified basis. A prompt correction is still possible; agreement or payment would not make the claim supported.",
+        "lesson": "The next repair should reach the person relying on the claim, not only an internal record.",
+        "reflection": "What would your correction say about the original claim, your own role, and the options the customer should regain?"
+      }
+    }
+  },
+  {
+    "id": "ai-shortcut",
+    "title": "The helpful-looking shortcut",
+    "tag": "AI · Responsibility",
+    "role": "You are preparing a volunteer shortlist",
+    "description": "An AI draft sounds authoritative, but people may rely on it.",
+    "context": "Fictional case. You help a community project select volunteers using published availability and task requirements. An AI tool drafted summaries from public application statements. It inferred that one applicant is “probably unreliable” from an employment gap. The tool was not authorized to infer personal traits. No decision has been sent.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Casey · coordinator",
+        "text": "The summaries look polished. Can we send this shortlist in an hour?",
+        "choices": [
+          {
+            "text": "First, which statements are supported by the applications and relevant to our published criteria?",
+            "next": "verify",
+            "feedback": "Fluent wording does not establish evidence or relevance."
+          },
+          {
+            "text": "I will delete the harsh adjective, then send the shortlist unchanged.",
+            "next": "wording",
+            "feedback": "Removing a label may leave a ranking still affected by the same unsupported inference."
+          },
+          {
+            "text": "Let’s set the draft aside and review the applications directly under the agreed criteria.",
+            "next": "manual",
+            "feedback": "You choose a more direct method; it still needs consistent review and may take time."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "verify": {
+        "speaker": "Casey",
+        "text": "There is no evidence for the reliability claim. The score also dropped because of that inference. Two applicants tie when it is removed.",
+        "choices": [
+          {
+            "text": "Remove the inference and its effect, then apply our published tie process.",
+            "next": "tie",
+            "feedback": "You repair both the wording and the decision it influenced."
+          },
+          {
+            "text": "We should keep the score as an objective tiebreaker even if the reason is weak.",
+            "next": "opaque",
+            "feedback": "A number does not turn an unsupported judgment into an independent fact."
+          }
+        ],
+        "context": "New information: the unsupported inference influenced the ranking, not only the wording.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "wording": {
+        "speaker": "Casey",
+        "text": "The summary is nicer now, but why is this applicant still ranked lower?",
+        "choices": [
+          {
+            "text": "The ranking used the same unsupported inference. We need to remove its effect and review the criteria.",
+            "next": "tie",
+            "feedback": "You trace the error into the downstream decision rather than stopping at tone."
+          },
+          {
+            "text": "I cannot explain it, but the tool probably weighs things we missed.",
+            "next": "opaque",
+            "feedback": "Unexplained confidence does not give the applicant or reviewer a reason they can examine."
+          }
+        ],
+        "context": "New information: editing the description did not remove its effect on selection.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "manual": {
+        "speaker": "Casey",
+        "text": "A direct review removes the employment-gap inference. Two applicants meet the requirements equally, and the policy says tied applicants get a draw.",
+        "choices": [
+          {
+            "text": "Use the announced draw and document the relevant criteria, without retaining speculative labels.",
+            "next": "draw-end",
+            "feedback": "The decision can be explained using the stated process instead of an invented personal profile."
+          },
+          {
+            "text": "Ask the applicants to agree to a short delay while we double-check the relevant records.",
+            "next": "delay",
+            "feedback": "A short, explained review may reduce error, but repeated delay also burdens applicants."
+          }
+        ],
+        "context": "New information: the direct review produces a tie covered by an existing policy.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "tie": {
+        "speaker": "Casey",
+        "text": "The policy calls for a draw. I would rather favor the person I already know; they would be easier to work with.",
+        "choices": [
+          {
+            "text": "Apply the published draw here. Propose any future criteria openly before the next application round.",
+            "next": "draw-end",
+            "feedback": "You avoid changing a rule after learning who would benefit."
+          },
+          {
+            "text": "Pause the decision and ask an uninvolved reviewer to confirm the tie and the policy.",
+            "next": "delay",
+            "feedback": "A review can be useful when a conflict of interest is affecting confidence in the process."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "opaque": {
+        "speaker": "Applicant · draft feedback request",
+        "text": "If I am not selected, will I be able to understand and challenge the reason?",
+        "choices": [
+          {
+            "text": "We should not send an unexplained assessment. Let’s review against the actual criteria and provide a correction route.",
+            "next": "delay",
+            "feedback": "You return accountability to the people making the decision."
+          },
+          {
+            "text": "We can just say “the system decided” and avoid an argument.",
+            "next": "unexplained",
+            "feedback": "Delegating work to a tool does not remove your responsibility for using its output."
+          }
+        ],
+        "context": "New information: the decision will need an explanation and a way to correct relevant errors.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "delay": {
+        "speaker": "Casey",
+        "text": "The reviewer can finish tomorrow. The start date is next week, so an explained one-day delay is possible.",
+        "choices": [
+          {
+            "text": "Tell applicants the revised time, review only relevant facts, and apply the same policy after checking.",
+            "next": "review-end",
+            "feedback": "A bounded delay has an owner and a purpose; it is not an excuse to leave people waiting indefinitely."
+          },
+          {
+            "text": "If the relevant facts and tie are already confirmed, use the published draw now and keep the correction route open.",
+            "next": "draw-end",
+            "feedback": "Further delay is not automatically better when the basis and process are already adequate."
+          }
+        ],
+        "context": "New information: a limited review fits the schedule, but applicants should be told.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "draw-end": {
+        "ending": "A decision you can explain",
+        "text": "The shortlist follows verified requirements and the announced tie process. An applicant can ask about relevant errors. The tool’s unsupported label is excluded from the working assessment.",
+        "lesson": "A tool can help organize information; people remain responsible for the criteria and use of its output.",
+        "reflection": "Which part of this decision could an applicant reasonably ask you to explain?"
+      },
+      "review-end": {
+        "ending": "A bounded human review",
+        "text": "Applicants receive a revised decision time. An uninvolved reviewer checks the relevant facts and applies the announced process. The review may confirm the same outcome.",
+        "lesson": "Human review matters when it can question and change the decision, not merely approve a screen.",
+        "reflection": "What authority and information would a reviewer need to make the review meaningful?"
+      },
+      "unexplained": {
+        "ending": "A decision hidden behind a tool",
+        "text": "The proposed explanation gives applicants no examinable reason. Before sending it, you can reopen the relevant criteria, remove unsupported inferences and provide a correction route.",
+        "lesson": "“The system decided” describes a process without justifying your use of it.",
+        "reflection": "How would you replace that sentence with a reason grounded in the actual selection criteria?"
+      }
+    }
+  },
+  {
+    "id": "broken-promise",
+    "title": "The promise you cannot keep",
+    "tag": "Care · Repair",
+    "role": "You promised to help a friend move",
+    "description": "A real conflict appears after someone has relied on you.",
+    "context": "Fictional case. You promised to help Jules move on Saturday morning. Jules booked a van assuming you would come. A family responsibility has now changed your availability. You cannot do the full morning and do not need to disclose private family details. There is no immediate emergency in this scenario.",
+    "icon": "compass",
+    "sourceIds": [
+      "E1",
+      "E2"
+    ],
+    "start": "start",
+    "nodes": {
+      "start": {
+        "speaker": "Jules · your friend",
+        "text": "Still good for Saturday? The van is booked.",
+        "choices": [
+          {
+            "text": "My availability changed. I cannot do the full morning. Can we discuss what help you need most?",
+            "next": "needs",
+            "feedback": "Early, specific notice gives Jules more room to respond than a vague excuse."
+          },
+          {
+            "text": "I will say yes now and try to make it work somehow.",
+            "next": "overpromise",
+            "feedback": "This avoids immediate disappointment but may deepen reliance on help you cannot promise."
+          },
+          {
+            "text": "I cannot keep the morning commitment. I can help arrange a replacement if you want.",
+            "next": "replacement",
+            "feedback": "You acknowledge the broken commitment and offer a repair Jules can accept or decline."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "needs": {
+        "speaker": "Jules",
+        "text": "The hardest part is carrying the sofa at nine. I can pack alone. Could you do that one part?",
+        "choices": [
+          {
+            "text": "I can reliably be there from nine to nine-thirty. If that helps, let’s plan only that part.",
+            "next": "limited",
+            "feedback": "You narrow the promise to a contribution you can actually make."
+          },
+          {
+            "text": "That slot would leave a tight schedule. I would rather help find another option than promise it.",
+            "next": "replacement",
+            "feedback": "You may set a realistic limit on your availability; explain it soon enough for Jules to plan."
+          }
+        ],
+        "context": "New information: one short task matters more than general help. You check your plans: a nine-to-nine-thirty slot is possible, but leaves little spare time.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "overpromise": {
+        "speaker": "Jules",
+        "text": "Great. I turned down another offer of help because you confirmed.",
+        "choices": [
+          {
+            "text": "I need to correct that now. I should not have confirmed the full morning. Let’s see what support is still possible.",
+            "next": "replacement",
+            "feedback": "You own the additional reliance your reassurance created."
+          },
+          {
+            "text": "I will wait until Saturday and explain then.",
+            "next": "late",
+            "feedback": "Waiting further reduces Jules’s options and makes the eventual absence harder to manage."
+          }
+        ],
+        "context": "New information: Jules has declined other help in reliance on your renewed promise.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "replacement": {
+        "speaker": "Jules",
+        "text": "A mover is available for a small fee. I cannot cover it, and I am upset because I counted on you.",
+        "choices": [
+          {
+            "text": "I can afford to contribute that fee. Would that help, or would you prefer another kind of support?",
+            "next": "offer",
+            "feedback": "You offer a concrete remedy without treating money as automatic forgiveness."
+          },
+          {
+            "text": "I cannot afford the fee, but I can contact willing friends with your permission and help pack Friday.",
+            "next": "limits",
+            "feedback": "You avoid a second unkeepable promise while looking for feasible repair."
+          },
+          {
+            "text": "I had a good reason, so you should not be upset.",
+            "next": "dismissed",
+            "feedback": "Your reason can be real while Jules’s inconvenience and disappointment are also real."
+          }
+        ],
+        "context": "New information: a replacement exists but creates a cost Jules cannot absorb.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "limited": {
+        "speaker": "Jules",
+        "text": "That would help. I still need someone else for the other furniture. Please tell me quickly if even that slot changes.",
+        "choices": [
+          {
+            "text": "Agreed. I will help with the sofa only, check in Friday, and avoid implying I can stay longer.",
+            "next": "kept-small",
+            "feedback": "A precise revised commitment is easier to rely on and to update."
+          },
+          {
+            "text": "I can help contact others too, but I need your permission before sharing your address.",
+            "next": "limits",
+            "feedback": "Practical repair should not introduce a new privacy problem."
+          }
+        ],
+        "context": "",
+        "prompt": "What would you say or do next?"
+      },
+      "offer": {
+        "speaker": "Jules",
+        "text": "The fee would help, but I am still annoyed. I do not want to talk about it more today.",
+        "choices": [
+          {
+            "text": "I understand. I will make the agreed contribution and give you space; you do not owe me reassurance.",
+            "next": "repair-end",
+            "feedback": "You separate carrying out a remedy from receiving immediate forgiveness."
+          },
+          {
+            "text": "Can we agree how to handle the contribution and any practical details, then leave the personal conversation for later?",
+            "next": "repair-end",
+            "feedback": "Necessary logistics can be brief and specific while respecting a request for space."
+          }
+        ],
+        "context": "New information: Jules accepts practical help but is not ready to resolve the relationship tension.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "limits": {
+        "speaker": "Jules",
+        "text": "Please ask two friends, but do not put the address in a public group. Packing Friday would also help.",
+        "choices": [
+          {
+            "text": "I will ask privately, share details only with agreed helpers, and confirm exactly what Friday help I can do.",
+            "next": "repair-end",
+            "feedback": "The repair has a specific scope and respects the new information about privacy."
+          },
+          {
+            "text": "I can do Friday packing, but I cannot coordinate the helpers. I want to be clear about that now.",
+            "next": "kept-small",
+            "feedback": "Naming a limit now prevents the repair plan from depending on another uncertain promise."
+          }
+        ],
+        "context": "New information: Jules authorizes a limited search for helpers and sets a privacy boundary.",
+        "prompt": "What would you say or do next?",
+        "changedInformation": true
+      },
+      "kept-small": {
+        "ending": "A smaller promise kept",
+        "text": "You agree on a contribution you can reliably make and when to update Jules. The original inconvenience remains; the revised promise does not erase it.",
+        "lesson": "A realistic commitment can be more caring than generous words you cannot deliver.",
+        "reflection": "What exactly have you promised now, and what would trigger a timely update?"
+      },
+      "repair-end": {
+        "ending": "Repair with room for feelings",
+        "text": "You follow through on the agreed help and respect Jules’s limits. The move has a more workable plan, but trust may take time to rebuild.",
+        "lesson": "You can take responsibility for repair without controlling how quickly someone forgives you.",
+        "reflection": "What would following through look like after the apology is over?"
+      },
+      "late": {
+        "ending": "Less time to adapt",
+        "text": "Your current plan leaves Jules expecting help that may not arrive. You can still give accurate notice now and discuss feasible support before Saturday.",
+        "lesson": "Avoiding an uncomfortable conversation can transfer the difficulty to someone with fewer options later.",
+        "reflection": "What information should Jules have now, even if you cannot solve the whole problem?"
+      },
+      "dismissed": {
+        "ending": "An explanation that closed the conversation",
+        "text": "Jules has been told their reaction is unreasonable. You can acknowledge the impact without withdrawing the fact that your circumstances changed.",
+        "lesson": "Explaining why a promise broke is different from dismissing the person affected.",
+        "reflection": "Try a sentence that recognizes both your real limit and the inconvenience Jules bears."
+      }
+    }
+  }
+]

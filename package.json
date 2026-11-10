@@ -1,0 +1,13 @@
+{
+  "name": "everyday-ethics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Practice thoughtful decisions in everyday life.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test app/test/*.test.js",
+    "validate": "node app/tools/validate.js",
+    "build": "node app/build.mjs",
+    "dev": "python3 -m http.server 4391 --bind 127.0.0.1 --directory dist"
+  }
+}
