@@ -1,6 +1,6 @@
 # Everyday Ethics
 
-This is a standalone learning experiment at `/Users/ionpetro/Documents/jobmachine/experiments/everyday-ethics`.
+This is a standalone learning experiment at `/Users/ionpetro/Documents/learning-apps/everyday-ethics`.
 
 - Preserve the actual Agora/Carpe family design and native learning engine. Read README.md and app/CONTENT_SCHEMA.md first.
 - Keep original semantic content, explanations for every answer, held-back transfer after its prerequisite, and substantive boundary cases.
