@@ -51,14 +51,19 @@ test('timed practice excludes judgments, while untimed scenarios cover every top
   }
 });
 
-test('build excludes inherited telemetry and uses a separate progress identity',()=>{
+test('analytics come only from src/analytics.js; separate progress identity',()=>{
   const read=n=>fs.readFileSync(path.join(__dirname,'..',n),'utf8');
   const app=read('src/app.js'),build=read('build.mjs'),shell=read('src/shell.html');
   assert.ok(app.includes('"everyday-ethics:family:v1"'));
   assert.ok(app.includes('"everyday-ethics-family"'));
-  assert.ok(!build.includes("read('src/analytics.js')"));
-  assert.ok(!app.includes('window.PulseAnalytics'));
+  // Analytics live in src/analytics.js only (production host, allowlisted properties; see analytics.test.js).
+  assert.ok(build.includes("read('src/analytics.js')"));
+  assert.ok(app.includes('window.PulseAnalytics'));
   assert.ok(!/posthog\.init|api_key|phc_/.test(app+shell+build));
+  const analytics=read('src/analytics.js');
+  assert.ok(analytics.includes('location.hostname !== "ethics.tryskepsis.com"'));
+  assert.ok(/disable_session_recording: true/.test(analytics) && /autocapture: false/.test(analytics));
+  assert.ok(!/"query"|"answer"|"name"|"reflection/.test(analytics.match(/const allowed = new Set\(\[[^\]]*\]\)/)[0]));
   assert.ok(shell.includes('ETHICS_UNITS'));
   assert.ok(!app.includes('starCard()'),'unpublished repository must not invoke the inherited missing star-card renderer');
 });

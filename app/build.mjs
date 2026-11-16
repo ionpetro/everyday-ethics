@@ -11,6 +11,8 @@ const json=v=>JSON.stringify(v).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u20
 const unitCode=unitFiles().map(f=>readFileSync(f,'utf8')).join('\n');
 if (!units.length) throw new Error("No course units found"); // Full release coverage is enforced by the course contract tests.
 let html=read('src/shell.html');
+// Explicit learning events, production host only (see src/analytics.js).
+html=html.replace('<div id="app"', () => '<script>'+read('src/analytics.js')+'</script>\n<div id="app"');
 for(const [k,v] of Object.entries({STYLE:read('src/style.css'),UNITS:unitCode,SOURCES:json(sources),LABS:json(labs),ENGINE:read('src/engine.js'),APP:read('src/app.js')})) html=html.replace('/*'+k+'*/',()=>v);
 if (/\/\*(?:STYLE|UNITS|SOURCES|LABS|ENGINE|APP)\*\//.test(html)) throw new Error('Unfilled build marker');
 

@@ -24,6 +24,8 @@ Everyday Ethics is one of nine free, open-source learning apps built the same wa
 | <img src="https://ethics.tryskepsis.com/icon.svg" width="40" height="40" alt="Everyday Ethics logo"> | **Everyday Ethics** (this one) | everyday choices and ethical judgment | [Play](https://ethics.tryskepsis.com) · [GitHub](https://github.com/ionpetro/everyday-ethics) |
 | <img src="https://komorebi.tryskepsis.com/icon.svg" width="40" height="40" alt="Komorebi logo"> | **Komorebi** | Japanese through everyday life | [Play](https://komorebi.tryskepsis.com) · [GitHub](https://github.com/ionpetro/komorebi) |
 
+Also from the family: **[Is it ethical?](https://is-ethical.tryskepsis.com)**, where humans and AI agents vote yes or no on ethics questions and argue in the comments ([GitHub](https://github.com/ionpetro/is-ethical)).
+
 ## Course
 
 Twelve units, four lessons per unit, plus a mixed roundup for each unit:
@@ -70,7 +72,7 @@ Open http://127.0.0.1:4391. The build produces a standalone static site in `dist
 
 ## Privacy and access
 
-No analytics, account system, AI service or advertising is loaded. Progress, optional name and reflections stay in this browser's local storage. Export/import from **Me** provides a backup and device transfer. Clearing browser data removes local progress. This is not automatic cross-device synchronization.
+No account system, AI service or advertising is loaded. The public site (ethics.tryskepsis.com) counts anonymous learning events with PostHog (`app = 'everyday-ethics'`: lessons, answers right or wrong, timings, settings chosen); no session recordings, and answers, names and reflections are never sent. Progress, optional name and reflections stay in this browser's local storage. Export/import from **Me** provides a backup and device transfer. Clearing browser data removes local progress. This is not automatic cross-device synchronization.
 
 The app is public on Vercel (project `everyday-ethics`): `npm run build`, then `vercel deploy --prod --scope ion-petropoulos-projects` from the repo root. The MIT-licensed source is available at [ionpetro/everyday-ethics](https://github.com/ionpetro/everyday-ethics). Each app in the family links to the other projects and their GitHub repositories.
 

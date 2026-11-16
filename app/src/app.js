@@ -17,7 +17,8 @@
   const mmss = (ms) => { const s = Math.max(0, Math.round(ms / 1000)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
 
   /** Explicit learning analytics on the production website only. */
-  function track() { /* This edition collects no analytics. */ }
+  /** Explicit learning analytics on the production website only (src/analytics.js filters the properties). */
+  function track(event, props = {}) { try { window.PulseAnalytics?.track(event, props); } catch { /* optional */ } }
   // ---------- sister apps ----------
   /** The family of free, open-source learning apps. Keep this list the same in Skepsis, Carpe, Gnothi, Objection, Everyday Ethics and Oikos (app.js and site.mjs). */
   const FAMILY = [
@@ -30,6 +31,7 @@
     {"id": "guanxi", "name": "Guanxi", "url": "https://guanxi.tryskepsis.com", "repo": "https://github.com/ionpetro/guanxi", "en": "Mandarin and local culture", "el": "Μανδαρινικά και τοπική κουλτούρα"},
     {"id": "everyday-ethics", "name": "Everyday Ethics", "url": "https://ethics.tryskepsis.com", "repo": "https://github.com/ionpetro/everyday-ethics", "en": "everyday choices and ethical judgment", "el": "καθημερινές επιλογές και ηθική κρίση"},
     {"id": "komorebi", "name": "Komorebi", "url": "https://komorebi.tryskepsis.com", "repo": "https://github.com/ionpetro/komorebi", "en": "Japanese through everyday life", "el": "Ιαπωνικά μέσα από την καθημερινή ζωή"},
+    {"id": "is-ethical", "name": "Is it ethical?", "url": "https://is-ethical.tryskepsis.com", "repo": "https://github.com/ionpetro/is-ethical", "en": "humans and AI agents vote yes or no on ethics questions", "el": "άνθρωποι και πράκτορες AI ψηφίζουν ναι ή όχι σε ηθικά ερωτήματα"},
   ];
 
   /** Links to the other apps in the family, tagged so each app's analytics shows where visitors came from. */
@@ -142,7 +144,7 @@
       cross_exam_best: S.crossExamBest, mocks_taken: (S.mocks || []).length, onboarded: !!S.onboarded, sits: S.sits, focus: S.focus || null, rank: E.rankOf(S).rank.id };
   }
   function syncProgress() { /* Progress remains in local storage; events carry only selected metrics. */ }
-  function trackAppOpened() { /* No telemetry. */ }
+  function trackAppOpened() { /* analytics.js records one app_opened per page load. */ }
   function trackDayProgress(prevTodayXp, st) {
     const now = S.days[today()] || 0;
     if (prevTodayXp < S.goal && now >= S.goal) track("daily_goal_reached", { goal_xp: S.goal, today_xp: now });
@@ -1099,7 +1101,7 @@
   }
   function openSources() {
     libraryRun();
-    shell(`<div class="intro"><div class="qlabel">Behind the lessons</div><h1>Ideas, evidence, and limits</h1><p class="story">Everyday Ethics follows the same learning engine as Carpe and Objection: a first guess, short teaching, harder retrieval, fresh transfer, mixed practice, and spaced return. The course explores friendships, work, community and digital life. The dilemmas ask you to consider competing responsibilities, not memorize a single moral verdict.</p><div class="rulebox"><b>Four useful questions</b><p>What do I know? Who is affected? What values conflict? What would change my decision?</p></div><p class="story">Those are ethical teaching commitments. Sources support the underlying principles, not the invented outcomes of our fictional cases. Research findings, practice guidance, and ethical commitments have different labels. Ethical choices can carry real costs; completing a course does not establish changed behavior.</p><p class="story">Professional codes are used within their stated scope; everyday examples are educational adaptations. No live AI grades your answers or reads your reflections. Progress stays in this browser unless you export it. Fonts load from Google Fonts.</p><div class="lab-list">${ETHICS_SOURCES.map(s => `<article class="card"><div class="eyebrow">${esc(s.id)} · ${esc(s.publisher)}</div><h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></h3><p class="story" style="font-size:15px;margin-top:8px">${esc(s.note)}</p></article>`).join("")}</div></div>`, footerBtn("Back", "ghost"));
+    shell(`<div class="intro"><div class="qlabel">Behind the lessons</div><h1>Ideas, evidence, and limits</h1><p class="story">Everyday Ethics follows the same learning engine as Carpe and Objection: a first guess, short teaching, harder retrieval, fresh transfer, mixed practice, and spaced return. The course explores friendships, work, community and digital life. The dilemmas ask you to consider competing responsibilities, not memorize a single moral verdict.</p><div class="rulebox"><b>Four useful questions</b><p>What do I know? Who is affected? What values conflict? What would change my decision?</p></div><p class="story">Those are ethical teaching commitments. Sources support the underlying principles, not the invented outcomes of our fictional cases. Research findings, practice guidance, and ethical commitments have different labels. Ethical choices can carry real costs; completing a course does not establish changed behavior.</p><p class="story">Professional codes are used within their stated scope; everyday examples are educational adaptations. No live AI grades your answers or reads your reflections. Progress stays in this browser unless you export it. On ethics.tryskepsis.com we count anonymous learning events with PostHog (lessons started and finished, answers right or wrong, timings) to improve the course; no session recordings, and your answers, name and reflections are never sent. Fonts load from Google Fonts.</p><div class="lab-list">${ETHICS_SOURCES.map(s => `<article class="card"><div class="eyebrow">${esc(s.id)} · ${esc(s.publisher)}</div><h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></h3><p class="story" style="font-size:15px;margin-top:8px">${esc(s.note)}</p></article>`).join("")}</div></div>`, footerBtn("Back", "ghost"));
     $("#next").addEventListener("click", closeRun);
   }
   function openLabs() {
